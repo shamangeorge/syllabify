@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "wadjet"
+require "syllabify"
+
+options = {
+  :ipa => nil,
+  :language => nil
+}
+
+parser = OptionParser.new do|opts|
+  opts.banner = "Usage: parse [options]"
+  opts.on('--ipa string', 'IPA String Representation') do |ipa|
+    options[:ipa] = ipa
+  end
+  opts.on("-i", "--interactive", "Interactively run this cli tool") do
+    options[:interactive] = true
+  end
+  opts.on('-l', '--language encoding', 'Language to syllabify in (one of english or german currently)') do |language|
+    options[:language] = language
+  end
+  opts.on('-h', '--help', 'Displays Help') do
+    puts opts
+    exit
+  end
+end
+parser.parse!
+
+if options[:ipa].nil?
+  puts parser
+  exit
+end
+
+if options[:interactive]
+  print 'Enter IPA input: '
+  options[:ipa] = gets.chomp
+  print 'Enter your encoding: '
+  options[:language] = gets.chomp
+end
+
+input = options[:ipa]
+#input = "dɪˌsɔrgənəˈze͡ɪʃən"
+#language = options[:language]
+transcription = Syllabify::Syllabify.new(:en, input)
+
+puts "input: #{input.green.underline}"
+puts "transcrition: #{transcription.to_s.red.underline}"
+puts "-".cyan * 15
+
+transcription.syllables.each_with_index do |syllable, index|
+  puts "syllable #{index.to_s}: #{syllable.to_s.green}"
+  puts "\tstress #{syllable.stress.to_s.yellow}"
+  puts "\tonset #{syllable.onset.cyan}"
+  puts "\tnucleus #{syllable.nucleus.underline.red}"
+  puts "\tcode #{syllable.coda.magenta.bold}"
+  puts "-".red * 15
+end

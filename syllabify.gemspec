@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/shamangeorge/syllabify'
   s.author   = 'George Papavassiliou'
   s.email    = 'shamangeorge@fruitopology.net'
-  s.files = `git ls-files`.split
+  s.files    = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.add_dependency 'activesupport'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'paint'
+  s.add_development_dependency 'pry'
 end
