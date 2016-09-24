@@ -15,5 +15,6 @@ Follow me on Twitter! http://twitter.com/codyrobbins
 
   s.files = `git ls-files`.split
 
-  s.add_dependency('activesupport')
+  s.add_dependency 'activesupport'
+  s.add_development_dependency 'rspec'
 end
