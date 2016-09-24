@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
-require('spec_helper')
+require 'spec_helper'
 
-describe CodyRobbins::Syllabify do
+describe Syllabify::Syllabify do
   def syllabify(string)
     described_class.new(:en, string)
   end

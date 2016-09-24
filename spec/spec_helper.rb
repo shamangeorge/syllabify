@@ -1,1 +1,1 @@
-require('syllabify')
+require 'syllabify'
