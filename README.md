@@ -27,7 +27,7 @@ Phonemes that require transcription with ties could potentially be alternatively
 Example
 -------
 
-    transcription = CodyRobbins::Syllabify.new(:en, 'dɪˌsɔrgənəˈze͡ɪʃən')
+    transcription = Syllabify.new(:en, 'dɪˌsɔrgənəˈze͡ɪʃən')
 
     transcription.to_s      #=> 'dɪ.ˌsɔr.gə.nə.ˈze͡ɪ.ʃən'
     transcription.syllables #=> [dɪ, ˌsɔr, gə, nə, ˈze͡ɪ, ʃən]
@@ -47,25 +47,6 @@ Example
 Colophon
 --------
 
-### See also
-
-If you like this gem, you may also want to check out [transliterate](http://codyrobbins.com/software/transliterate).
-
-### Tested with
-
-* Ruby 1.9.2-p290 — 18 October 2011
-
-### Contributing
-
-* [Source](https://github.com/codyrobbins/syllabify)
-* [Bug reports](https://github.com/codyrobbins/syllabify/issues)
-
-To send patches, please fork on GitHub and submit a pull request.
-
 ### Credits
 
 © 2011 [Cody Robbins](http://codyrobbins.com/). See LICENSE for details.
-
-* [Homepage](http://codyrobbins.com/software/syllabify)
-* [My other gems](http://codyrobbins.com/software#gems)
-* [Follow me on Twitter](http://twitter.com/codyrobbins)
