@@ -1,4 +1,3 @@
-source 'https://rubygems.org/'
+source 'https://repo.fury.io/fruitopology/'
 
-gem "wadjet", git: "git@github.com:shamangeorge/wadjet.git", branch: "master"
 gemspec
