@@ -1,6 +1,7 @@
+# encoding: UTF-8
 require 'active_support'
 require 'active_support/core_ext'
-# encoding: UTF-8
+require('active_support/core_ext')
 
 require 'yaml'
 
