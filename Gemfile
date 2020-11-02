@@ -3,4 +3,4 @@ source 'https://repo.fury.io/fruitopology/'
 
 gemspec
 
-gem('rspec', '~> 3.8.0')
+gem('rspec', '~> 3.10.0')
